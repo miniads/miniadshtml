@@ -19,31 +19,22 @@
 
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#fafafa">
-
-  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 
 <body>
 
-<div id="root"></div>
-<script src="js/umd/index.js"></script>
-<div id="ButtonsWrapper">
-  <button onclick="renderComponent('banner')">Banner</button>
-  <button onclick="renderComponent('full_screen')">Fullscreen</button>
-</div>
+<div id="root" class="dom"></div>
+<script src="./js/umd/index.js"></script>
 <script>
-  var MyComponent = window.TgAdsContainer.TgAdsContainer;
-
-  function renderComponent(type) {
-    ReactDOM.render(
-      React.createElement(MyComponent, {accesstoken: "25f3bf8b-cea4-484f-8701-6f64d162de79", type: type}),
-      document.getElementById('root')
-    );
-  }
-
+  TgAdsContainer.ScriptTgAdsContainer('#root.dom',
+    {
+      accesstoken:'25f3bf8b-cea4-484f-8701-6f64d162de79',
+      tginitdata: '',
+      type: 'full_screen'
+    })
 </script>
+
 
 </body>
 
